@@ -23,7 +23,11 @@ data_frame <- tibble(
 )
 ```
 
-```{r }
-
+```{r mean}
+mean(rsample)
+mean(vec_logic)
+mean(char_vec)
+mean(fac_vec)
 ```
 
+the mean of rsample and vec_logic work, but the mean of char_vec and fac_vec do not work, possibly because taking mean requires that each variable cannot be null. 
