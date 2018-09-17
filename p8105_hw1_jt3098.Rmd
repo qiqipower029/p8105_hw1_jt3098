@@ -3,8 +3,17 @@ title: "p8105_hw1_jt3098"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
+```{r library, include = FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r random_sample}
+set.seed(10)
+rsample <- runif(10, min = 0, max = 5)
+vec_logic <- rsample > 2
+char_vec <- vector(mode = "character", length = 10)
+fac_vec <- factor(x = character(10))
 ```
 
 ## R Markdown
