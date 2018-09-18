@@ -50,3 +50,17 @@ as.numeric(fac_vec)
 ```
 
 In this case, because I did not give value to the character and factor vector, so they both could not be converted to numeric. However, generally speaking, if there is no null variable, character can be converted to factor and then to numeric. If factor vector comprises of "1", "2"... Then it can be converted to character and then numeric. If it consists of letters like "a", "b", then it can be converted to character but not to numeric.
+
+```{r problem2_variables}
+set.seed(1029)
+x <- rnorm(1000)
+set.seed(702)
+y <- rnorm(1000)
+vec_logic2 <- x + y > 0
+vec_numeric <- as.numeric(vec_logic2)
+fac_vec2 <- as.factor(vec_logic2)
+data_frame2 = tibble(
+  
+)
+```
+
