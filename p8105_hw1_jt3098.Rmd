@@ -31,3 +31,22 @@ mean(fac_vec)
 ```
 
 the mean of rsample and vec_logic work, but the mean of char_vec and fac_vec do not work, possibly because taking mean requires that each variable cannot be null. 
+
+```{r conversion1, eval = FALSE}
+as.numeric(vec_logic)
+as.numeric(char_vec)
+as.numeric(fac_vec)
+```
+
+Logical: TRUE becomes 1; FALSE becomes 0.
+Character: All the character variables become NA.
+Factor: All the variables become 1.
+
+```{r conversion2, eval = FALSE}
+as.factor(char_vec)
+as.numeric(char_vec)
+as.character(fac_vec)
+as.numeric(fac_vec)
+```
+
+In this case, because I did not give value to the character and factor vector, so they both could not be converted to numeric. However, generally speaking, if there is no null variable, character can be converted to factor and then to numeric. If factor vector comprises of "1", "2"... Then it can be converted to character and then numeric. If it consists of letters like "a", "b", then it can be converted to character but not to numeric.
