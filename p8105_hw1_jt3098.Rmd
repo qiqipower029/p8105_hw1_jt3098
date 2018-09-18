@@ -60,7 +60,11 @@ vec_logic2 <- x + y > 0
 vec_numeric <- as.numeric(vec_logic2)
 fac_vec2 <- as.factor(vec_logic2)
 data_frame2 = tibble(
-  
+  x,
+  y,
+  vec_logic2,
+  vec_numeric,
+  fac_vec2
 )
 ```
 
