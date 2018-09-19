@@ -79,7 +79,6 @@ The mean of x is `r format(mean(x))`, and the median of x is `r format(median(x)
 The proportion of TRUE in the logical vector is `r format(sum(vec_logic2) / length(vec_logic2))`.
 
 ```{r scatterplot}
-ggplot(data_frame2, x = x, y = y) + geom_point()
-
+ggplot(data_frame2, aes(x = x, y = y, color = vec_logic2)) + geom_point()
 ```
 
