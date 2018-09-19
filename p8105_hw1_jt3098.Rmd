@@ -74,6 +74,12 @@ data_frame2 = tibble(
 
 ```
 
-The size of the dataset is `r object.size(data_frame2)`.
-The mean of x is `r mean(x)`, and the median of x is `r median(x)`.
-The proportion of TRUE in the logical vector is `r sum(vec_logic2) / length(vec_logic2)`.
+The size of the dataset is `r format(object.size(data_frame2))`.
+The mean of x is `r format(mean(x))`, and the median of x is `r format(median(x))`.
+The proportion of TRUE in the logical vector is `r format(sum(vec_logic2) / length(vec_logic2))`.
+
+```{r scatterplot}
+ggplot(data_frame2, x = x, y = y) + geom_point()
+
+```
+
