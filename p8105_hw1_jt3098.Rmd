@@ -33,8 +33,9 @@ mean(char_vec)
 mean(fac_vec)
 ```
 
-* Discussion:
-  The mean of rsample and vec_logic work, but the mean of char_vec and fac_vec do not work, possibly because taking mean requires that each variable cannot be null. 
+Discussion:
+
+* The mean of rsample and vec_logic work, but the mean of char_vec and fac_vec do not work, possibly because taking mean requires that each variable cannot be null. 
 
 ```{r conversion1, eval = FALSE}
 as.numeric(vec_logic)
@@ -42,10 +43,11 @@ as.numeric(char_vec)
 as.numeric(fac_vec)
 ```
 
-* Discussion:
-  Logical: TRUE becomes 1; FALSE becomes 0.
-  Character: All the character variables become NA.
-  Factor: All the variables become 1.
+Discussion:
+
+* Logical: TRUE becomes 1; FALSE becomes 0.
+* Character: All the character variables become NA.
+* Factor: All the variables become 1.
 
 ```{r conversion2, eval = FALSE}
 as.factor(char_vec)
@@ -54,8 +56,9 @@ as.character(fac_vec)
 as.numeric(fac_vec)
 ```
 
-* Discussion:
-  In this case, because I did not give value to the character and factor vector, so they both could not be converted to numeric. However, generally speaking, if there is no null variable, character can be converted to factor and then to numeric. If factor vector comprises of "1", "2"... Then it can be converted to character and then numeric. If it consists of letters like "a", "b", then it can be converted to character but not to numeric.
+Discussion:
+
+* In this case, because I did not give value to the character and factor vector, so they both could not be converted to numeric. However, generally speaking, if there is no null variable, character can be converted to factor and then to numeric. If factor vector comprises of "1", "2"... Then it can be converted to character and then numeric. If it consists of letters like "a", "b", then it can be converted to character but not to numeric.
 
 ## Problem 2
 
@@ -78,10 +81,11 @@ data_frame2 = tibble(
 
 ```
 
-* Discussion:
-  The size of the dataset is `r format(object.size(data_frame2))`.
-  The mean of x is `r format(mean(x))`, and the median of x is `r format(median(x))`.
-  The proportion of TRUE in the logical vector is `r format(sum(vec_logic2) / length(vec_logic2))`.
+Discussion:
+
+* The size of the dataset is `r format(object.size(data_frame2))`.
+* The mean of x is `r format(mean(x))`, and the median of x is `r format(median(x))`.
+* The proportion of TRUE in the logical vector is `r format(sum(vec_logic2) / length(vec_logic2))`.
 
 ```{r scatterplot}
 ggplot(data_frame2, aes(x = x, y = y, color = vec_logic2)) + geom_point()
@@ -90,7 +94,8 @@ ggplot(data_frame2, aes(x = x, y = y, color = vec_numeric)) + geom_point()
 ggplot(data_frame2, aes(x = x, y = y, color = fac_vec2)) + geom_point()
 ```
 
-* Disccusion:
-  The scatterplot with logical vector color scale only has 2 options (TRUE and FALSE), because logical vector itself can only give people 2 types of value (TRUE and FALSE) for a certain variable. So, it is discrete.
-  The scatterplot with numeric vector color scale has a continuous spectrum, because numeric vector can give people many values (numbers) for a certain variable.
-  The scatterplot with factor vector color scale only has 2 options (TRUE and FALSE), because in this case, factor vector can only give people 2 levels of value (TRUE and FALSE) for a certain variable. However, in other cases, it may give more than 2 levels. It is also discrete.
+Disccusion:
+
+* The scatterplot with logical vector color scale only has 2 options (TRUE and FALSE), because logical vector itself can only give people 2 types of value (TRUE and FALSE) for a certain variable. So, it is discrete.
+* The scatterplot with numeric vector color scale has a continuous spectrum, because numeric vector can give people many values (numbers) for a certain variable.
+* The scatterplot with factor vector color scale only has 2 options (TRUE and FALSE), because in this case, factor vector can only give people 2 levels of value (TRUE and FALSE) for a certain variable. However, in other cases, it may give more than 2 levels. It is also discrete.
